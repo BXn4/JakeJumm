@@ -1,3 +1,3 @@
 # JakeJumm
 Simple terminal based text editor
-<br>![kép](https://user-images.githubusercontent.com/78733248/225055694-e6d953fd-5b60-4510-b828-618831394f3e.png)
+![kép](https://user-images.githubusercontent.com/78733248/225264487-ac106f54-6b5d-4b2a-9a7b-0eba4d4038bd.png)
