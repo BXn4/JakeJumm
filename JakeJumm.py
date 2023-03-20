@@ -10,12 +10,18 @@ import shutil
 import string
 import sys
 import chardet
+import datetime
 
 fajlNeve = ""
+kodolas = ""
 szoveg = []
+most = datetime.datetime.now()
+ido = most.strftime("%H:%M")
 
 def main(stdscr):
 	global fajlNeve
+	global kodolas
+	global ido
 	space = " "
 	spacek = ""
 	fajlKiterjesztes = ""
@@ -36,6 +42,7 @@ def main(stdscr):
 	console_Y = shutil.get_terminal_size().lines
 	console_X = shutil.get_terminal_size().columns
 	console_C = int(console_X / 2)
+	console_R = int(console_X - 6)
 	hossz = console_X // len(space) - 5
 	for i in range(console_X // 1):
 		spacek = space * hossz
@@ -46,7 +53,10 @@ def main(stdscr):
 	stdscr.clear()
 	stdscr.addstr(console_Y - 1 , 0, "Menu{}".format(spacek), menubar)
 	stdscr.addstr(console_Y - 1 , 5, "|", menubar)
-	stdscr.addstr(console_Y - 1 , 7, "ln(1:0)", menubar)
+	stdscr.addstr(console_Y - 1 , 7, "ln(0:0)", menubar)
+	stdscr.addstr(console_Y - 1 , 18, "|", menubar)
+	stdscr.addstr(console_Y - 1 , 20, "{}".format(kodolas), menubar)
+	stdscr.addstr(console_Y - 1, console_R, "{}".format(ido), menubar)
 	if hosszuFajlNev == True:
 		stdscr.addstr(console_Y - 1 , console_C, "{}..".format(fajlNeve) + "{}".format(fajlKiterjesztes), menubar)
 	else:
